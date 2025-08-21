@@ -1,6 +1,8 @@
 package com.example.roomsiswa.viewmodel
 
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.roomsiswa.repositori.RepositoriSiswa
 import com.example.roomsiswa.room.Siswa
@@ -29,8 +31,8 @@ class EntryViewModel(private val repositoriSiswa: RepositoriSiswa): ViewModel() 
 }
 
 data class UIStateSiswa(
-    val detailSiswa//
-    val isEntryValid: Boolean = true
+    val detailSiswa: DetailSiswa = DetailSiswa(),
+    val isEntryValid: Boolean = false
 )
 
 data class DetailSiswa(

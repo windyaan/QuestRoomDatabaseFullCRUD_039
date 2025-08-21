@@ -3,6 +3,7 @@ package com.example.roomsiswa.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.roomsiswa.repositori.RepositoriSiswa
+import com.example.roomsiswa.room.Siswa
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.filterNotNull
@@ -22,5 +23,7 @@ class HomeViewModel(private val repositoriSiswa: RepositoriSiswa): ViewModel() {
             initialValue = HomeUiState()
         )
 
-
+    data class HomeUiState(
+        val listSiswa: List<Siswa> = listOf()
+    )
 }

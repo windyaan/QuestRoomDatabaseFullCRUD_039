@@ -50,7 +50,7 @@ fun DetailSiswa.toSiswa(): Siswa = Siswa(
 )
 
 fun Siswa.toUiStateSiswa(isEntryValid: Boolean = false): UIStateSiswa = UIStateSiswa (
-    detailSiswa = this.toDetailSiswa(),
+    detailSiswa = this.toSDetailSiswa(),
     isEntryValid = isEntryValid
 )
 

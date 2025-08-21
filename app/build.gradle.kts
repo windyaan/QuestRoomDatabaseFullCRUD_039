@@ -5,7 +5,7 @@ plugins {
 //    prosesor agar entity/DAO dapat diprosess
 //    id("com.android.application")
 //    id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp") version "1.9.24-1.0.20" //sesuaikan dengan versi Kotlin (ver 36)
+    id("com.google.devtools.ksp") version "2.0.0-1.0.22" //sesuaikan dengan versi Kotlin (ver 36)
 }
 
 android {
@@ -15,7 +15,7 @@ android {
     defaultConfig {
         applicationId = "com.example.roomsiswa"
         minSdk = 30
-        targetSdk = 36
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 

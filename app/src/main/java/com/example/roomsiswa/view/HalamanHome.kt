@@ -48,7 +48,7 @@ object DestinasiHome : DestinasiNavigasi{
 @Composable
 fun HomeScreen(
     navigateToItemEntry: () -> Unit,
-     modifier: Modifier,
+     modifier: Modifier = Modifier,
     viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ){
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()

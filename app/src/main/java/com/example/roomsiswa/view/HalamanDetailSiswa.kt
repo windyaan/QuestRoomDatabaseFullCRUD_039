@@ -44,13 +44,10 @@ import com.example.roomsiswa.viewmodel.PenyediaViewModel
 import com.example.roomsiswa.viewmodel.toSiswa
 import kotlinx.coroutines.launch
 
-object DestinasiDetailSiswa :DestinasiNavigasi{
+object DestinasiDetailSiswa : DestinasiNavigasi{
     override val route = "detail_siswa"
-
     override val tittleRes = R.string.detail_siswa
-
     const val itemIdArg = "idSiswa"
-
     val routeWithArgs = "$route/{$itemIdArg}"
 }
 

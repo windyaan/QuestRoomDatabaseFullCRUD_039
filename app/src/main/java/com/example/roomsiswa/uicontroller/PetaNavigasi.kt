@@ -24,6 +24,7 @@ import com.example.roomsiswa.view.DestinasiEditSiswa
 import com.example.roomsiswa.view.DestinasiEntry
 import com.example.roomsiswa.view.DestinasiHome
 import com.example.roomsiswa.view.DetailSiswaScreen
+import com.example.roomsiswa.view.EditSiswaScreen
 import com.example.roomsiswa.view.EntrySiswaScreen
 import com.example.roomsiswa.view.HomeScreen
 
@@ -93,6 +94,15 @@ fun HostNavigasi(
             )
         }
 
-
+        composable(route = DestinasiEditSiswa.routeWithArgs,
+            arguments = listOf(navArgument(DestinasiEditSiswa.itemIdArg){
+                type = NavType.IntType
+            })
+        ){
+            EditSiswaScreen(
+                navigateBack = {navController.popBackStack()},
+                onNavigateUp = {navController.navigateUp()}
+            )
+        }
     }
 }

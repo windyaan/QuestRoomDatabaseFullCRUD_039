@@ -73,7 +73,7 @@ fun HostNavigasi(
                 navigateToItemEntry = { navController.navigate(DestinasiEntry.route) },
                 //tambah
                 navigateToItemUpdate = {
-                    navController.navigate("{${DestinasiDetailSiswa.route}/${it}")
+                    navController.navigate("${DestinasiDetailSiswa.route}/${it}")
                 }
             )
         }

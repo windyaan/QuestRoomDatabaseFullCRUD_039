@@ -7,6 +7,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.roomsiswa.repositori.RepositoriSiswa
+import com.example.roomsiswa.view.DestinasiDetailSiswa
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -27,27 +28,26 @@ class EditViewModel (
                 .first()
                 .toUiStateSiswa(true)
         }
+    }
 
-        class EditViewModel(
-            fun updateUiState(detailSiswa: DetailSiswa){
-            uiStateSiswa =
-                UIStateSiswa(detailSiswa = DetailSiswa, isEntryValid =
-                validasiInput(detailSiswa))
+    fun updateUiState(detailSiswa: DetailSiswa){
+        uiStateSiswa =
+            UIStateSiswa(detailSiswa = detailSiswa, isEntryValid =
+            validasiInput(detailSiswa))
+    }
+
+    private fun validasiInput(uiState: DetailSiswa = uiStateSiswa.detailSiswa)
+            :Boolean{
+        return with(uiState){
+            nama.isNotBlank() && alamat.isNotBlank() && telpon.isNotBlank()
         }
+    }
 
-        private fun validasiInput(uiState: DetailSiswa = uiStateSiswa.detailSiswa)
-        :Boolean{
-            return with(uiState){
-                nama.isNotBlank() && alamat.isNotBlank() && telpon.isNotBlank()
-            }
-        }
-
-        suspend fun updateSiswa(){
-            if (validasiInput(uiStateSiswa.detailSiswa)){
-                repositoriSiswa.updateSiswa(
-                    uiStateSiswa.detailSiswa.toSiswa()
-                )
-            }
+    suspend fun updateSiswa(){
+        if (validasiInput(uiStateSiswa.detailSiswa)){
+            repositoriSiswa.updateSiswa(
+                uiStateSiswa.detailSiswa.toSiswa()
+            )
         }
     }
 }

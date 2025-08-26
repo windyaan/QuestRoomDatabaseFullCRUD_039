@@ -34,7 +34,7 @@ fun EditSiswaScreen(
     Scaffold (
         topBar = {
             SiswaTopAppBar(
-                title = stringResource(DestinasiEditSiswa.tittleRes),
+                title = stringResource(DestinasiEditSiswa.titleRes),
                 canNavigateBack = true,
                 navigateUp = onNavigateUp
             )
